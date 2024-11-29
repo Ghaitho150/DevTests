@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "343d8b41-295d-4230-a033-5040ff67e81b",
+		"name": "Scheduling API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32755135"
+	},
+	"item": [
+		{
+			"name": "Insert Employees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": 0,\n    \"name\": \"Bob Red\",\n    \"availability\": {\n      \"monday\": false,\n      \"tuesday\": false,\n      \"wednesday\": false,\n      \"thursday\": false\n    }\n  },\n  {\n    \"id\": 1,\n    \"name\": \"Gary Blue\",\n    \"availability\": {\n      \"monday\": false,\n      \"tuesday\": false,\n      \"wednesday\": true,\n      \"thursday\": false\n    }\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Albert Green\",\n    \"availability\": {\n      \"monday\": false,\n      \"tuesday\": true,\n      \"wednesday\": true,\n      \"thursday\": true\n    }\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Jane Yellow\",\n    \"availability\": {\n      \"monday\": false,\n      \"tuesday\": true,\n      \"wednesday\": true,\n      \"thursday\": false\n    }\n  },\n  {\n    \"id\": 4,\n    \"name\": \"John White\",\n    \"availability\": {\n      \"monday\": false,\n      \"tuesday\": false,\n      \"wednesday\": true,\n      \"thursday\": false\n    }\n  },\n  {\n    \"id\": 5,\n    \"name\": \"Sarah Black\",\n    \"availability\": {\n      \"monday\": false,\n      \"tuesday\": false,\n      \"wednesday\": true,\n      \"thursday\": true\n    }\n  }\n]"
+				},
+				"url": {
+					"raw": "{{base_url}}/Employee/insert",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"Employee",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Shifts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Monday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Tuesday\"\n  },\n    {\n    \"scheduledWorkDay\": \"Wednesday\"\n  },\n  {\n    \"scheduledWorkDay\": \"Thursday\"\n  }\n]"
+				},
+				"url": {
+					"raw": "{{base_url}}/shift/insert",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"shift",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/schedule/create",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"schedule",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Schedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/schedule",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:5260"
+		}
+	]
+}
